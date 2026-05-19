@@ -1473,3 +1473,10 @@ Entries:
   changes:
   - type: Fix
     message: Баг с переносом тел на стуле.
+- id: 137
+  author: ZekA1L
+  time: '2026-05-19T10:58:35.768937+00:00'
+  pr: 1435
+  changes:
+  - type: Remove
+    message: Старый геймрул пиратов из выживания.
