@@ -1826,3 +1826,11 @@ Entries:
     message: Станция Gemini была стандартизирована by Amaliz_ForTheMore.
   - type: Fix
     message: Баги на картах Gemini и Box
+- id: 168
+  author: MTF97
+  time: '2026-05-23T14:21:02.749989+00:00'
+  pr: 1473
+  changes:
+  - type: Fix
+    message: На карте Оазис более нет возможности устроть апокалипсис с некроморфами,
+      сидя в перме; исправлены прочие мелкие баги.
