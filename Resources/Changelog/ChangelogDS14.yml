@@ -1907,3 +1907,10 @@ Entries:
     message: Вирусолог ЭПИЧЕСКОЕ возвращение на карту Train.
   - type: Tweak
     message: Шаттл НИО на карте Box был переделан.
+- id: 175
+  author: smiler009
+  time: '2026-05-24T09:47:37.981091+00:00'
+  pr: 1483
+  changes:
+  - type: Fix
+    message: баги
