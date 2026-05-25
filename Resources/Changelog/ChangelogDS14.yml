@@ -1985,3 +1985,12 @@ Entries:
   changes:
   - type: Fix
     message: Баги на карте Box и Omega были уничтожены. by Amaliz_ForTheMore
+- id: 185
+  author: CyberBobeks
+  time: '2026-05-25T16:32:33.001359+00:00'
+  pr: 1499
+  changes:
+  - type: Fix
+    message: Невозможность купить какие-либо симптомы за разумный вирус.
+  - type: Fix
+    message: Пропажа действий при перезаходе за разумный вирус.
