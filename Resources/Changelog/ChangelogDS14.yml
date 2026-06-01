@@ -2349,3 +2349,10 @@ Entries:
   changes:
   - type: Tweak
     message: Иконки в хотбаре у демона-вестника by KerFroozy
+- id: 227
+  author: CyberBobeks
+  time: '2026-06-01T13:36:59.813561+00:00'
+  pr: 1574
+  changes:
+  - type: Add
+    message: Отображение "итогов раунда" в манифест.
