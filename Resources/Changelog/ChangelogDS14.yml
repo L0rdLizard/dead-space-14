@@ -3040,3 +3040,10 @@ Entries:
   changes:
   - type: Add
     message: Последняя выбранная карта в автоголосовании не появится в новом пуле.
+- id: 302
+  author: zubekkk
+  time: '2026-06-11T09:58:40.640088+00:00'
+  pr: 1693
+  changes:
+  - type: Add
+    message: Действие для свистков
