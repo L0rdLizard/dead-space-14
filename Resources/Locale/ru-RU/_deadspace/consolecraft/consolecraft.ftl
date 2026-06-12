@@ -48,4 +48,5 @@ consolecraft-dismantle-full = В станке уже находится пред
 consolecraft-dismantle-not-craftable-error = Предмет не может быть разобран.
 consolecraft-dismantle-wrong-blueprint = Неподходящий чертёж.
 consolecraft-dismantle-storage-warning = Внутри РИГа обнаружены вещи! Нажмите еще { $clicks } раз(а) для уничтожения.
+consolecraft-dismantle-blueprint-mismatch = Чертеж не соответствует предмету в станке!
 consolecraft-dismantle-button = Разобрать
