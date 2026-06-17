@@ -3509,3 +3509,10 @@ Entries:
   changes:
   - type: Add
     message: Новые треки для кода угрозы "Гамма".
+- id: 349
+  author: Non-stop-smetana
+  time: '2026-06-17T20:11:09.466838+00:00'
+  pr: 1771
+  changes:
+  - type: Add
+    message: АВД был добавлен чемоданчик на пинкоде, а также собственный пульт доступов.
