@@ -3502,3 +3502,10 @@ Entries:
   changes:
   - type: Fix
     message: Баги на лаве с прошлого апдейта, голиафы не гибаются от кинетиков и тд
+- id: 348
+  author: CyberBobeks
+  time: '2026-06-17T16:44:50.271707+00:00'
+  pr: 1770
+  changes:
+  - type: Add
+    message: Новые треки для кода угрозы "Гамма".
