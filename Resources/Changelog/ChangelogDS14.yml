@@ -3616,3 +3616,10 @@ Entries:
     message: Атмос-пожарный костюм отныне защищает от пожара
   - type: Add
     message: Компонент IgnoreContactDamageComponent, который защищает от DamageContactsComponent
+- id: 361
+  author: TheZuTi
+  time: '2026-06-19T17:03:55.082116+00:00'
+  pr: 1794
+  changes:
+  - type: Fix
+    message: Пэрент пули доминатора
