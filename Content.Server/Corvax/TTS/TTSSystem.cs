@@ -13,6 +13,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Server.DeadSpace.Languages;
 using Content.Shared.DeadSpace.Languages.Prototypes;
+using Content.Shared.Silicons.StationAi;
 
 namespace Content.Server.Corvax.TTS;
 
@@ -25,6 +26,7 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _rng = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!; // DS14
+    [Dependency] private readonly SharedStationAiSystem _stationAi = default!; // DS14
 
     private readonly List<string> _sampleText =
         new()
@@ -238,17 +240,19 @@ public sealed partial class TTSSystem : EntitySystem
 
         foreach (var uid in understandings)
         {
-            RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid), isRadio: true), Filter.Entities(uid));
+            var soundSource = GetTtsSourceEntity(uid);
+            RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(soundSource), isRadio: true), Filter.Entities(uid));
         }
 
         foreach (var uid in notUnderstandings)
         {
-            if (soundLexiconData is null)
-                RaiseNetworkEvent(new PlayTTSEvent(new byte[0], GetNetEntity(uid), isRadio: true, isSoundLexicon: true, languageId: languageId), Filter.Entities(uid));
-            else
-                RaiseNetworkEvent(new PlayTTSEvent(soundLexiconData, GetNetEntity(uid), isRadio: true), Filter.Entities(uid));
-        }
+            var soundSource = GetTtsSourceEntity(uid);
 
+            if (soundLexiconData is null)
+                RaiseNetworkEvent(new PlayTTSEvent(new byte[0], GetNetEntity(soundSource), isRadio: true, isSoundLexicon: true, languageId: languageId), Filter.Entities(uid));
+            else
+                RaiseNetworkEvent(new PlayTTSEvent(soundLexiconData, GetNetEntity(soundSource), isRadio: true), Filter.Entities(uid));
+        }
     }
 
     private async void HandleAnnounce(string message, string lexiconMessage, ProtoId<LanguagePrototype> languageId, string speaker, Filter filter)
@@ -380,4 +384,14 @@ public sealed partial class TTSSystem : EntitySystem
 
         return await _ttsManager.ConvertTextToSpeech(speaker, textSsml);
     }
+
+    // DS14-start: carry recipient-specific remote hearing attenuation and source
+    private EntityUid GetTtsSourceEntity(EntityUid recipient)
+    {
+        if (_stationAi.TryGetCore(recipient, out var core) && core.Comp?.RemoteEntity != null)
+            return core.Comp.RemoteEntity.Value;
+
+        return recipient;
+    }
+    // DS14-end
 }
