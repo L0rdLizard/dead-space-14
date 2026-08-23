@@ -28,9 +28,11 @@ public sealed class CriminalRecordsConsoleBoundUserInterface : BoundUserInterfac
     {
         base.Open();
 
-        var comp = EntMan.GetComponent<CriminalRecordsConsoleComponent>(Owner);
+        var maxLength = EntMan.TryGetComponent<CriminalRecordsConsoleComponent>(Owner, out var comp)
+            ? comp.MaxStringLength
+            : 256u;
 
-        _window = new(Owner, comp.MaxStringLength, _playerManager, _proto, _random, _accessReader);
+        _window = new(Owner, maxLength, _playerManager, _proto, _random, _accessReader);
         _window.OnKeySelected += key =>
             SendMessage(new SelectStationRecord(key));
         _window.OnFiltersChanged += (type, filterValue) =>
@@ -51,7 +53,7 @@ public sealed class CriminalRecordsConsoleBoundUserInterface : BoundUserInterfac
         _window.OnHistoryClosed += () => _historyWindow?.Close();
         _window.OnClose += Close;
 
-        _historyWindow = new(comp.MaxStringLength);
+        _historyWindow = new(maxLength);
         _historyWindow.OnAddHistory += line => SendMessage(new CriminalRecordAddHistory(line));
         _historyWindow.OnDeleteHistory += index => SendMessage(new CriminalRecordDeleteHistory(index));
 
