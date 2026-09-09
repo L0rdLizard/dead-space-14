@@ -13,6 +13,7 @@ crew-monitoring-ui-flavor-right-label = v1.7
 crew-monitoring-ui-ping-mode-label = Уведомлять при:
 
 crew-monitoring-console-ping = { $monitor } издаёт сигнал.
+crew-monitoring-console-ping-ai = Мониторинг экипажа: { $mode }.
 crew-monitoring-console-ping-mode-set = Порог оповещения: { $mode }.
 crew-monitoring-console-ping-mode-severe = тяжёлое состояние
 crew-monitoring-console-ping-mode-critical = критическое состояние

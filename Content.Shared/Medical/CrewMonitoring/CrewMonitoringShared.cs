@@ -35,6 +35,7 @@ public sealed class CrewMonitoringSetPingModeMessage : BoundUserInterfaceMessage
     }
 }
 
+[Serializable, NetSerializable]
 public enum CrewMonitoringConsolePingMode
 {
     Severe,

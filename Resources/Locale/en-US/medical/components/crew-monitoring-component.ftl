@@ -18,6 +18,7 @@ crew-monitoring-ui-flavor-right-label = v1.7
 crew-monitoring-ui-ping-mode-label = Notify:
 
 crew-monitoring-console-ping = { $monitor } beeps.
+crew-monitoring-console-ping-ai = Crew monitoring alert: { $mode }.
 crew-monitoring-console-ping-mode-set = Alert threshold set to { $mode }.
 crew-monitoring-console-ping-mode-severe = severe injury
 crew-monitoring-console-ping-mode-critical = critical condition

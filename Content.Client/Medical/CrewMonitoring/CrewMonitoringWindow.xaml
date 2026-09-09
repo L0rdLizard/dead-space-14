@@ -18,8 +18,10 @@
 
                 <LineEdit Name="SearchLineEdit" HorizontalExpand="True"
                           PlaceHolder="{Loc crew-monitoring-ui-filter-line-placeholder}" />
-                <Label Text="{Loc crew-monitoring-ui-ping-mode-label}" Margin="10 0 4 0" StyleClasses="WindowFooterText" /> <!-- DS14 -->
-                <OptionButton Name="PingModeOption" HorizontalExpand="False" SetWidth="220" Margin="0 0 10 0" />            <!-- DS14 -->
+                <BoxContainer Orientation="Horizontal" Margin="0 6 0 0">
+                    <Label Text="{Loc crew-monitoring-ui-ping-mode-label}" VerticalAlignment="Center" Margin="0 0 8 0" />
+                    <OptionButton Name="PingModeOption" HorizontalExpand="True" />
+                </BoxContainer>
                 <ScrollContainer Name="SensorScroller"
                                  VerticalExpand="True"
                                  SetWidth="520"

@@ -47,8 +47,6 @@
         type: RadarConsoleBoundUserInterface
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
-      # enum.GeneralStationRecordConsoleKey.Key: # DS14
-      #   type: GeneralStationRecordConsoleBoundUserInterface
       enum.CriminalRecordsConsoleKey.Key: # DS14
         type: CriminalRecordsConsoleBoundUserInterface # DS14
       enum.SiliconLawsUiKey.Key:
@@ -67,15 +65,13 @@
         toggleAction: AIActionAGhostShowRadar
       enum.CrewMonitoringUIKey.Key:
         toggleAction: AIActionAGhostShowCrewMonitoring
-      # enum.GeneralStationRecordConsoleKey.Key: # DS14
-      #   toggleAction: AIActionAGhostShowStationRecords
       enum.CriminalRecordsConsoleKey.Key: # DS14
         toggleAction: AIActionAGhostShowCriminalRecords # DS14
       enum.CommunicationsConsoleUiKey.Key:
         toggleAction: AIActionAGhostShowCommunications
   - type: CrewMonitoringConsole
-  # - type: GeneralStationRecordConsole # DS14
   - type: CriminalRecordsConsole # DS14
+    hasPrinter: false
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
